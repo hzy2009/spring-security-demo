@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- <settings>
+		<setting name="logImpl" value="LOG4J" />
+	</settings> -->
+    <typeAliases>
+        <typeAlias type="com.codingmobi.ui.core.utils.mybatis.PageView" alias="PageView"/>
+    </typeAliases>
+    <plugins>
+        <plugin interceptor="com.codingmobi.ui.core.utils.mybatis.PaginationInterceptor">
+            <property name="dialect" value="com.codingmobi.ui.core.utils.mybatis.impl.MySQLDialect" />
+            <property name="pageSqlId" value=".*ByPage$" />
+        </plugin>
+    </plugins>
+</configuration>
